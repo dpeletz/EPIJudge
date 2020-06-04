@@ -47,9 +47,6 @@ def is_valid_sudoku(partial_assignment: List[List[int]]) -> bool:
 
 
 if __name__ == '__main__':
-    # print(is_valid_sudoku([[0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0], [2, 8, 0, 9, 0, 0, 5, 0, 0], [7, 0, 0, 0, 0, 0, 0, 0, 0],
-    #  [0, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 5, 0, 0, 0, 0, 3, 0], [0, 0, 0, 0, 6, 0, 0, 0, 0], [0, 0, 6, 4, 0, 0, 0, 0, 8],
-    #  [0, 0, 0, 0, 0, 0, 0, 3, 0]]))
     exit(
         generic_test.generic_test_main('is_valid_sudoku.py',
                                        'is_valid_sudoku.tsv', is_valid_sudoku))

@@ -6,11 +6,15 @@ from test_framework.random_sequence_checker import (
     binomial_coefficient, check_sequence_is_uniformly_random,
     compute_combination_idx, run_func_with_retries)
 from test_framework.test_utils import enable_executor_hook
+import random
 
 
 def random_sampling(k: int, A: List[int]) -> None:
-    # TODO - you fill in here.
-    return
+    to_delete = len(A) - k
+
+    for i in range(to_delete):
+        random_int = random.randint(0, len(A) - 1)
+        del A[random_int]
 
 
 @enable_executor_hook

@@ -3,13 +3,40 @@ from test_framework.test_failure import TestFailure
 
 
 def int_to_string(x: int) -> str:
-    # TODO - you fill in here.
-    return '0'
+    digits, s, m = "0123456789", "", 1
+    if x == 0: return digits[x]
+
+    if x < 0:
+        s, x = s + "-", -1 * x
+    elif x > 0:
+        s = s + "+"
+
+    while m <= x: m *= 10
+
+    m = m // 10
+
+    while m >= 1:
+        val = x // m
+        s, x, m = s + digits[val], x - (m * val), m // 10
+
+    return s
 
 
 def string_to_int(s: str) -> int:
-    # TODO - you fill in here.
-    return 0
+    digits, sum, sign = "0123456789", 0, 1
+
+    if s[0] == "-":
+        sign, s = -1, s[1:]
+    if s[0] == "+":
+        s = s[1:]
+
+    m = 10 ** (len(s) - 1)
+
+    for i in s:
+        sum += m * (digits.index(i))
+        m = m // 10
+
+    return sign * sum
 
 
 def wrapper(x, s):

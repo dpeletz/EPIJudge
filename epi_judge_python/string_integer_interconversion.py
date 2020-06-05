@@ -13,7 +13,7 @@ def int_to_string(x: int) -> str:
 
     while m <= x: m *= 10
 
-    m = m // 10
+    m //= 10
 
     while m >= 1:
         val = x // m
@@ -33,7 +33,7 @@ def string_to_int(s: str) -> int:
     m = 10 ** (len(s) - 1)
 
     for i in s:
-        sum += m * (digits.index(i))
+        sum += m * digits.index(i)
         m = m // 10
 
     return sign * sum
